@@ -2,9 +2,9 @@ package com.loong.componentdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -45,5 +45,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ArouterOne(View view) {
+        // 应用内跳转
+        ARouter.getInstance()
+                .build("/arouter/one")
+                .navigation();
     }
 }

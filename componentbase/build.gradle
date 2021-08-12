@@ -7,7 +7,7 @@ android {
         minSdkVersion min_sdk_version.toInteger()
         targetSdkVersion target_sdt_version.toInteger()
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
@@ -20,5 +20,5 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api "com.android.support:appcompat-v7:$support_version"
+    api 'androidx.appcompat:appcompat:1.0.0'
 }

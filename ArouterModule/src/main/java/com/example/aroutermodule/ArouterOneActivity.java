@@ -1,11 +1,13 @@
 package com.example.aroutermodule;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
 
 
-
+@Route(path = "/arouter/one")
 public class ArouterOneActivity extends AppCompatActivity {
 
     @Override
