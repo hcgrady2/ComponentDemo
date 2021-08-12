@@ -1,12 +1,14 @@
 package com.loong.componentdemo;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.loong.base.AppConfig;
 import com.loong.base.BaseApp;
 
 public class MainApplication extends BaseApp {
+    private static final String TAG = "whc";
     @Override
     public void onCreate() {
         super.onCreate();
@@ -16,6 +18,7 @@ public class MainApplication extends BaseApp {
             ARouter.openLog();     // 打印日志
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
+        Log.i(TAG, "onCreate: ");
         ARouter.init(this);
 
         initModuleApp(this);
