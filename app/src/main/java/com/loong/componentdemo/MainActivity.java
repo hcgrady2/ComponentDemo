@@ -1,16 +1,20 @@
 package com.loong.componentdemo;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +52,30 @@ public class MainActivity extends AppCompatActivity {
         // 应用内跳转
         ARouter.getInstance()
                 .build("/testtest/one")
-                .navigation();
+                //.withTransition() 带动画
+                .navigation(this, 100);
 
 //        ARouter.getInstance().
 //                build("/share/share")
 //                .withString("share_content", "分享数据到微博").navigation();
+
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        try {
+            String result = data.getStringExtra("param_result");
+
+            Log.i(TAG, "onActivityResult: result :" + result);
+
+        }catch (Exception e){
+
+        }
+
 
     }
 }
