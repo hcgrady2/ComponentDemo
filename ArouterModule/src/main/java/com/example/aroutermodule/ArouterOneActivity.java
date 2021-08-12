@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.alibaba.android.arouter.facade.annotation.Route;
 
 
-@Route(path = "/arouter/one")
+@Route(path = "/testtest/one")
 public class ArouterOneActivity extends AppCompatActivity {
 
     @Override

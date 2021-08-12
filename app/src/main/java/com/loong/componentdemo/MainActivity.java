@@ -47,7 +47,12 @@ public class MainActivity extends AppCompatActivity {
     public void ArouterOne(View view) {
         // 应用内跳转
         ARouter.getInstance()
-                .build("/arouter/one")
+                .build("/testtest/one")
                 .navigation();
+
+//        ARouter.getInstance().
+//                build("/share/share")
+//                .withString("share_content", "分享数据到微博").navigation();
+
     }
 }
