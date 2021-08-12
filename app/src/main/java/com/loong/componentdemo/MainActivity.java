@@ -43,4 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void fragment(View view) {
         startActivity(new Intent(this, FragmentActivity.class));
     }
+
+    public void ArouterOne(View view) {
+    }
 }
