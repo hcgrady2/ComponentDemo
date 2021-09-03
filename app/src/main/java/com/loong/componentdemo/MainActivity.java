@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.loong.componentdemo.arouterdemo.ArouterDmeoMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void share(View view) {
-        ARouter.getInstance().build("/share/share").withString("share_content", "分享数据到微博").navigation();
+        ARouter.getInstance().build("/share/share").withString("share_content", "分享的数据数据").navigation();
+
     }
 
     /**
@@ -77,5 +79,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void ArouterDemo(View view) {
+        startActivity(new Intent(MainActivity.this, ArouterDmeoMainActivity.class));
     }
 }

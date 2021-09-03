@@ -1,4 +1,4 @@
-package com.loong.componentbase;
+package com.example.module_one;
 
 import org.junit.Test;
 

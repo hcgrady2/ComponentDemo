@@ -33,6 +33,28 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".arouterdemo.ArouterDmeoMainActivity">
+
+        </activity>
+        <activity android:name=".arouterdemo.samples.FirstActivity" />
+        <activity android:name=".arouterdemo.samples.SecondActivity" />
+        <activity android:name=".arouterdemo.samples.ThreeActivity" />
+        <activity android:name=".arouterdemo.samples.ForeActivity" />
+        <activity android:name=".arouterdemo.SchemeFilterActivity">
+            <intent-filter>
+                <data
+                    android:host="test.manu.com"
+                    android:scheme="arouter" />
+
+                <action android:name="com.manu.route" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".arouterdemo.samples.FiveActivity" />
+        <activity android:name=".arouterdemo.samples.SixActivity" />
 
 
     </application>

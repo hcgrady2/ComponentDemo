@@ -815,12 +815,63 @@ Login 组件中添加 resourcePrefix 配置后，我们会发现 res 中 xml 定
 
 
 
+## Arouter
+```aidl
+ARouter::Compiler >>> No module name, for more information, look at gradle log.
+
+```
 
 
+```aidl
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+```
 
 
+配置相关：
+```aidl
+android {
+    defaultConfig {
+        ...
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+}
 
+dependencies {
+    //api与compiler匹配使用，使用最新版可以保证兼容
+    compile 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    ...
+}
 
+```
+
+路由表自动记载：
+```aidl
+// 路由表自动加载插件
+apply plugin: 'com.alibaba.arouter'
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        //ARouter
+        classpath "com.alibaba:arouter-register:1.0.2"
+    }
+}
+
+```
 
 
 

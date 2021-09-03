@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "com.loong.componentdemo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion target_sdt_version.toInteger()
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,13 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
+
+//        //ARouter
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
     }
 
     sourceSets {
@@ -52,4 +59,13 @@ dependencies {
     runtimeOnly project(':login')
     runtimeOnly project(':share')
     runtimeOnly project(':ArouterModule')
+
+
+
+    implementation project(':module-one')
+    implementation project(':module-two')
+
+    compile 'com.alibaba:fastjson:1.2.48'
+
+
 }

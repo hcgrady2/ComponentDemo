@@ -1,2 +1,4 @@
 include ':app', ':login', ':share', ':componentbase', ':base'
 include ':ArouterModule'
+include ':module-one'
+include ':module-two'
